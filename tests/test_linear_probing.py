@@ -1,6 +1,6 @@
 import random
 
-from hashtable.open_addressing import OpenAddressingTable
+from hashtable.linear_probing import LinearProbingTable
 
 def test_insert():
     nums = []
@@ -14,7 +14,7 @@ def test_insert():
         nums.append(num)
         return num
 
-    table = OpenAddressingTable()
+    table = LinearProbingTable()
 
     for size in range(1, 5):
         key = get_unique_num()

@@ -48,7 +48,7 @@ deactivate && source venv/bin/activate
 
 ## Activity ##
 
-For this activity you will write the `insert` method for the two different hash tables (`SeparateChainingTable` and `OpenAddressingTable`).
+For this activity you will write the `insert` method for the two different hash tables (`SeparateChainingTable` and `LinearProbingTable`) within the `hashtables` directory.
 
 All this needs to do is insert the key into the table in the correct location.  It does _not_ need to handle the case where the key already exists (that is optional).  **Assume that the user will never insert the same key twice.**
 

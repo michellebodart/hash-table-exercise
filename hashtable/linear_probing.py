@@ -1,9 +1,9 @@
-class OpenAddressingTable:
+class LinearProbingTable:
     def __init__(self, table_size=4):
         self.size = 0
         self.table = []
         for i in range(table_size):
-            self.table.append([])
+            self.table.append(None)
 
     def insert(self, key, value):
         """
