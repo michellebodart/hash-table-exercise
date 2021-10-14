@@ -45,3 +45,21 @@ pip install -r requirements.txt
 ```bash
 deactivate && source venv/bin/activate
 ```
+
+## Activity ##
+
+For this activity you will write the `insert` method for the two different hash tables (`SeparateChainingTable` and `OpenAddressingTable`).
+
+All this needs to do is insert the key into the table in the correct location.  It does _not_ need to handle the case where the key already exists (that is optional).  **Assume that the user will never insert the same key twice.**
+
+You should use the built in function `hash` as your hash function (though you will need to mod by the size of the table each time you insert).
+
+The only other method needed to pass the tests is already there (`get`).
+
+### Optional Challenges ###
+
+If you have extra time or are just super pumped about hash tables and want to do more after class you can do the following:
+
+* Stop assuming the user will never try to insert the same key twice.
+* Grow the table (double its size) when it is more than 75% full (`self.size >= len(table)`).
+* Implement `delete` to remove an item from the table.
