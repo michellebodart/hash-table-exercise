@@ -61,5 +61,5 @@ The only other method needed to pass the tests is already there (`get`).
 If you have extra time or are just super pumped about hash tables and want to do more after class you can do the following:
 
 * Stop assuming the user will never try to insert the same key twice.
-* Grow the table (double its size) when it is more than 75% full (`self.size >= len(table)`).
+* Grow the table (double its size) when it is more than 75% full (`self.size >= len(table) * 0.75`).
 * Implement `delete` to remove an item from the table.
