@@ -3,23 +3,28 @@ import random
 from hashtable.separate_chaining import SeparateChainingTable
 
 def test_insert():
+    nums = []
+    # Get a unique random number.
+    #
+    # This is mostly me being paranoid about bad luck.
+    def get_unique_num():
+        num = random.randint(-10000, 10000)
+        while num in nums:
+            num = random.randint(-10000, 10000)
+        nums.append(num)
+        return num
+
     table = SeparateChainingTable()
 
-    key1 = random.randint(0, 150)
-    val1 = random.randint(0, 150)
+    for size in range(1, 5):
+        key = get_unique_num()
+        val = get_unique_num()
 
-    table.insert(key1, val1)
+        table.insert(key, val)
 
-    assert table.size == 1
-    assert table.get(key1) == val1
+        assert table.size == size
+        assert table.get(key) == val
 
-    key2 = random.randint(151, 250)
-    val2 = random.randint(151, 250)
-
-    table.insert(key2, val2)
-
-    assert table.size == 2
-    assert table.get(key2) == val2
-
-    assert table.get(random.randint(251, 350)) == None
-    assert table.get(random.randint(251, 350), "missing") == "missing"
+    # Check for missing keys.
+    assert table.get(get_unique_num()) == None
+    assert table.get(get_unique_num(), "missing") == "missing"
