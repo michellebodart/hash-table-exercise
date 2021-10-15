@@ -9,7 +9,18 @@ class LinearProbingTable:
         """
         Insert `(key, value)` based on the hashed value of `key`.
         """
-
+        start_index = hash(key) % len(self.table)
+        index = start_index
+        spot_is_valid = False
+        while not spot_is_valid:
+            if not self.table[index]:
+                self.table[index] = (key, value)
+                spot_is_valid = True
+            #if it's empty, insert the key,value
+            else:
+            #if it's not empty, move on to the next spot
+                index += 1
+                
         # TODO: Try to insert into self.table
 
         # If successful, increment.
